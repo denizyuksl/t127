@@ -56,6 +56,9 @@ public class C03_IfElseStatement {
             System.out.println("Emekli olabilmek için " + (65 - yas) + "yıl çalışmalısınız");
         }else {
             System.out.println("Girdiğiniz değerlerden en az biri yanlıştır");
+
+            System.out.println("deneme");
+
         }
     }
 }
