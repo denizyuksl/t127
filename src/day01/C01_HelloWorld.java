@@ -47,6 +47,7 @@ public class C01_HelloWorld {
         \' :' yazar.
         \\ :\ yazar
 
+
          */
 
         System.out.println("Hello World\nHello Wise");//Hello World

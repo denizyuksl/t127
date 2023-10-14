@@ -10,7 +10,7 @@ public class P05_SwitchStatement {
         */
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Lütfen bir rakam giriniz.(0-9)");
+        System.out.println("Lütfen bir rakam giriniz.(0-9 arasında)");
         int rakam = scan.nextInt();
 
         switch (rakam){
@@ -36,14 +36,16 @@ public class P05_SwitchStatement {
                 System.out.println("Altı");
                 break;
             case 7:
-                System.out.println("Bir");
+                System.out.println("yedi");
                 break;
             case 8:
-                System.out.println("İki");
+                System.out.println("sekiz");
                 break;
             case 9:
-                System.out.println("Sıfır");
+                System.out.println("dokuz");
                 break;
+            default:
+                System.out.println("Yanlış bir değer girdiniz");
 
 
         }
