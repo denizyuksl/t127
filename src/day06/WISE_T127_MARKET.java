@@ -1,5 +1,7 @@
 package day06;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Scanner;
 
 public class WISE_T127_MARKET {
@@ -19,7 +21,7 @@ public class WISE_T127_MARKET {
 
     public static void main(String[] args) {
            /*
-   *
+
   ==================== WISE T127 MARKET ===================================
        ilk programa girildiginde bizi bir menu karsilasin bu secenekler
            1 ŞARKÜTERİ ÜRÜNLERİ
@@ -65,6 +67,8 @@ public class WISE_T127_MARKET {
         }
     }
 
+
+
     private static void cikis() {
         System.out.println("---------Çıkış Yapılıyor--------");System.exit(0);
     }
@@ -109,7 +113,7 @@ public class WISE_T127_MARKET {
                 urunFiyati = urunFiyati * urunMiktari;
                 toplam += urunFiyati;
                 System.out.println("Oluşan Sepet Tutarı: " + toplam);
-                sepet += urunAdi + ":fiyati " + urunFiyati +"₺";
+                sepet += urunAdi + ":fiyati " + urunFiyati +"₺\n";
                 System.out.println(" Başka ürün almak ister misiniz? Eğer başka ürün almak isterseniz lütfen kodunu giriniz!" +
                         "\nAna Menüye dönmek için lütfen 0 (Sıfır) tuşuna basınız");
 
@@ -126,23 +130,29 @@ public class WISE_T127_MARKET {
         System.out.println(sepet);
         System.out.println(" ");
         System.out.println("Toplam alışveriş Tutarı: "+toplam);
+        System.out.print("Müşterinin ödeme miktarını giriniz: ");
         int odeme=scan.nextInt();
-//        if (odeme<toplam){
- //           System.out.println("Ödeme Yetersiz");
-//
-  //      }else{
-    //        System.out.println("Ödenen tutar:" +odeme+"\nPara Üstü:"+odeme-toplam));
+     if (odeme<toplam){
+           System.out.println("Ödeme Yetersiz. Ödemeniz"+(toplam-odeme)+ "TL kadar eksiktir.Bu fark borç olarak hesabınıza kaydedilmiştir");
+
+        }else{
+            System.out.println("Ödenen tutar:" +odeme+
+                    "\nPara Üstü:"+(odeme-toplam));
         }
+        LocalDateTime saat =LocalDateTime.now();
+        System.out.println(saat);
+        System.out.println("İyi günler dileriz - Yine bekleriz");
+        cikis();
 
 
 
-    //}
+    }
 
     private static void market() {
         System.out.println("------- Market Reyonuna Hoşgeldiniz -------");
         System.out.println("Lütfen almak istediğiniz ürün kodunu(UK) giriniz");
         System.out.println("Nutella Fiyati:109₺ UK:31\nPrinc Fiyati:40₺ UK:32\n" +
-                "Makarna Fiyati:12₺ UK:33\nŞampuan Fiyati:60t UK:34\n Mercimek fiyati:30₺ UK:35");
+                "Makarna Fiyati:12₺ UK:33\nŞampuan Fiyati:60₺ UK:34\n Mercimek fiyati:30₺ UK:35");
         while (!ekUrun){
             urunKodu= scan.nextInt();
             if (urunKodu>=31 && urunKodu<=35){
@@ -182,8 +192,11 @@ public class WISE_T127_MARKET {
                 toplam += urunFiyati;
                 System.out.println("Oluşan Sepet Tutarı: " + toplam);
                 sepet += urunAdi + ": " + urunFiyati + " TL dir\n";
-                System.out.println(" Başka ürün almak ister misiniz? Eğer başka ürün almak isterseniz lütfen kodunu giriniz!" +
+                System.out.println(" Başka ürün almak ister misiniz? Eğer başka ürün almak isterseniz lütfen kodunu (UK)giriniz!" +
                         "\nAna Menüye dönmek için lütfen 0 (Sıfır) tuşuna basınız");
+
+            } else if (urunKodu==0) {
+                girisEkrani();
 
             }
         }
@@ -243,5 +256,6 @@ public class WISE_T127_MARKET {
             }
         }
 
-    }
 
+
+    }
