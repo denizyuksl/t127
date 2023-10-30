@@ -121,11 +121,72 @@ public class WISE_T127_MARKET {
 }
 
     private static void fisYazdir() {
-        System.out.println("------- Fiş Yazdırılıyor -------");
-    }
+        System.out.println("------- WISE T127 Market -------");
+        System.out.println("Alışverişinizde bizi tercih ettiğiniz için \nTeşekkür ederim");
+        System.out.println(sepet);
+        System.out.println(" ");
+        System.out.println("Toplam alışveriş Tutarı: "+toplam);
+        int odeme=scan.nextInt();
+//        if (odeme<toplam){
+ //           System.out.println("Ödeme Yetersiz");
+//
+  //      }else{
+    //        System.out.println("Ödenen tutar:" +odeme+"\nPara Üstü:"+odeme-toplam));
+        }
+
+
+
+    //}
 
     private static void market() {
         System.out.println("------- Market Reyonuna Hoşgeldiniz -------");
+        System.out.println("Lütfen almak istediğiniz ürün kodunu(UK) giriniz");
+        System.out.println("Nutella Fiyati:109₺ UK:31\nPrinc Fiyati:40₺ UK:32\n" +
+                "Makarna Fiyati:12₺ UK:33\nŞampuan Fiyati:60t UK:34\n Mercimek fiyati:30₺ UK:35");
+        while (!ekUrun){
+            urunKodu= scan.nextInt();
+            if (urunKodu>=31 && urunKodu<=35){
+                System.out.println("Miktari giriniz(adet)");
+                urunMiktari=scan.nextInt();
+                switch (urunKodu){
+                    case 31:
+                        urunAdi="Nutella";
+                        urunFiyati=109;
+                        System.out.println(urunMiktari+" adet "+urunAdi+"Fiyati:"+(urunMiktari*urunFiyati)+"TL'dir");
+                    break;
+                    case 32:
+                        urunAdi="Princ";
+                        urunFiyati=40;
+                        System.out.println(urunMiktari+" adet "+urunAdi+"Fiyati:"+(urunMiktari*urunFiyati)+"TL'dir");
+                        break;
+                    case 33:
+                        urunAdi="Makarna";
+                        urunFiyati=12;
+                        System.out.println(urunMiktari+" adet "+urunAdi+"Fiyati:"+(urunMiktari*urunFiyati)+"TL'dir");
+                        break;
+
+                    case 34:
+                        urunAdi="Şampuan";
+                        urunFiyati=60;
+                        System.out.println(urunMiktari+" adet "+urunAdi+"Fiyati:"+(urunMiktari*urunFiyati)+"TL'dir");
+                        break;
+
+                    case 35:
+                        urunAdi="Mercimek";
+                        urunFiyati=30;
+                        System.out.println(urunMiktari+" adet "+urunAdi+"Fiyati:"+(urunMiktari*urunFiyati)+"TL'dir");
+                        break;
+
+                }
+                urunFiyati = urunFiyati * urunMiktari;
+                toplam += urunFiyati;
+                System.out.println("Oluşan Sepet Tutarı: " + toplam);
+                sepet += urunAdi + ": " + urunFiyati + " TL dir\n";
+                System.out.println(" Başka ürün almak ister misiniz? Eğer başka ürün almak isterseniz lütfen kodunu giriniz!" +
+                        "\nAna Menüye dönmek için lütfen 0 (Sıfır) tuşuna basınız");
+
+            }
+        }
     }
 
 
